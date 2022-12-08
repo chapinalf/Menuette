@@ -1,25 +1,40 @@
-# MySQL + Flask Boilerplate Project
+# README - MENUETTE
 
-This repo contains a boilerplate setup for spinning up 2 docker containers: 
-1. A MySQL 8 container for obvious reasons
-1. A Python Flask container to implement a REST API
+## Team Information
 
-## How to setup and start the containers
-**Important** - you need Docker Desktop installed
+- Chapin Alf
+- Katelyn Donn
+- Madeline Gilman
+- Tyler Knohl
 
-1. Clone this repository.  
-1. Create a file named `db_root_password.txt` in the `secrets/` folder and put inside of it the root password for MySQL. 
-1. Create a file named `db_password.txt` in the `secrets/` folder and put inside of it the password you want to use for the `webapp` user. 
-1. In a terminal or command prompt, navigate to the folder with the `docker-compose.yml` file.  
-1. Build the images with `docker compose build`
-1. Start the containers with `docker compose up`.  To run in detached mode, run `docker compose up -d`. 
+## Project Pitch 
 
-## For setting up a Conda Web-Dev environment:
+Menuette is a restaurant review platform that focuses on menu-specific restaurant reviews and foodie communities. 
+The app caters to food bloggers, restaurant owners, and everyday searchers. Through the app, 
+users can filter through restaurants by their specific cravings and allergens to
+find menu items that suit their needs. Users are also able to join communities that allow them to discuss their food
+limitations, restaurant recommendations, and menu items. Restaurant owners within the app can promote their restaurant
+with ads and engage with customers. Lastly, bloggers can explore new restaurants and write reviews on the restaurants
+they visit.
 
-1. `conda create -n webdev python=3.9`
-1. `conda activate webdev`
-1. `pip install flask flask-mysql flask-restful cryptography flask-login`
+## Project Overview
 
+Menuette was designed for three different users, the restaurant owner, searcher, and blogger. 
+Each of our users have their own routes from our database that corresponds to their pages in AppSmith. 
+In order to connect our users with our app, we ran docker containers which create specific paths 
+where user data goes to then be posted to AppSmith using Ngrok.
 
+## Video Overview
+https://drive.google.com/file/d/1brRFZxGpdbmN4P7buVN-bISn0yI6Bq7t/view?usp=share_link
+
+## How to Run
+
+1. Start docker and run the following commands in terminal:
+2. docker compose build 
+3. docker compose up 
+4.  Once the containers are up, run the following command in a new terminal window
+5. ngrok http 8001 
+6. Open the AppSmith Menuete project and edit the "Main Datasource" with your generated ngrok link 
+7. Deploy the application (https://appsmith.cs3200.net/app/menuette/home-6384f07cffea3148102aa7a8)
 
 
